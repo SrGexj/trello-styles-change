@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Estilos Trello personalizados con aviso
 // @namespace    http://tampermonkey.net/
-// @version      0.3
+// @version      0.3.1
 // @description  Cambia estilos en Trello y muestra un aviso visual en pantalla al aplicar los cambios CSS personalizados.
 // @author       Juano
 // @match        *://*.trello.com/*
@@ -18,7 +18,8 @@
         commentsBlockWidth: {
             name: 'Ancho del bloque de comentarios',
             propertyToChange: 'width',
-            value: ''
+            value: '',
+            scopeClass: '.q5xxNU7ASO2fsR, .q5xxNU7ASO2fsR .N4ktAjtOpkJvy0'
         }
     }
 
@@ -138,8 +139,7 @@
         const style = document.createElement('style')
         style.id = 'custom-styles'
         style.textContent = `
-            .q5xxNU7ASO2fsR,
-            .q5xxNU7ASO2fsR .N4ktAjtOpkJvy0 {
+            ${settings.commentsBlockWidth.scopeClass} {
                 box-sizing: border-box !important;
                 width: ${settings.commentsBlockWidth.value} !important;
             }
@@ -163,8 +163,7 @@
             width: fit-content !important;
         }
 
-        .q5xxNU7ASO2fsR,
-        .q5xxNU7ASO2fsR .N4ktAjtOpkJvy0 {
+          ${settings.commentsBlockWidth.scopeClass} {
             box-sizing: border-box !important;
             width: ${settings.commentsBlockWidth.value} !important;
         }
