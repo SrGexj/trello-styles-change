@@ -7,8 +7,8 @@
 // @match        *://*.trello.com/*
 // @run-at       document-idle
 // @grant        none
-// @updateURL    https://raw.githubusercontent.com/SrGexj/trello-styles-change/main/Estilos%20Trello%20personalizados%20con%20aviso.user.js
-// @downloadURL  https://raw.githubusercontent.com/SrGexj/trello-styles-change/main/Estilos%20Trello%20personalizados%20con%20aviso.user.js
+// @updateURL    https://github.com/SrGexj/trello-styles-change/raw/refs/heads/main/custom-trello-styles.user.js
+// @downloadURL  https://github.com/SrGexj/trello-styles-change/raw/refs/heads/main/custom-trello-styles.user.js
 // ==/UserScript==
 
 (function() {
