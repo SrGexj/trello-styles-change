@@ -118,34 +118,42 @@
         const existingStyle = document.getElementById('custom-styles')
         if (existingStyle) {
             existingStyle.remove()
-        } 
-
-        // Validar el ancho del bloque de comentarios
-        if (!settings.commentsBlockWidth.value || isNaN(parseFloat(settings.commentsBlockWidth.value))) {
-            settings.commentsBlockWidth.value = '700px' // Valor por defecto si no se especifica
         }
-        // Asegurarse de que el ancho sea un valor válido
-        settings.commentsBlockWidth.value = settings.commentsBlockWidth.value.trim()
-        if (!settings.commentsBlockWidth.value.endsWith('px') && !settings.commentsBlockWidth.value.endsWith('%')) {
-            settings.commentsBlockWidth.value += 'px' // Añadir 'px' si no se especifica
-        }
-        // Validar que el ancho sea un valor numérico válido
-        const widthValue = parseFloat(settings.commentsBlockWidth.value)
-        if (isNaN(widthValue) || widthValue <= 0) {
-            settings.commentsBlockWidth.value = '700px' // Valor por defecto si no es válido
-        }
-
-        // Crear un nuevo elemento de estilo con los estilos personalizados
+    
+        let styleContent = ''
+    
+        Object.keys(settings).forEach(key => {
+            const setting = settings[key]
+    
+            // Validaciones básicas de valor
+            if (!setting.value || isNaN(parseFloat(setting.value))) {
+                setting.value = '700px' // Valor por defecto si no es válido
+            }
+    
+            setting.value = setting.value.trim()
+            if (!setting.value.endsWith('px') && !setting.value.endsWith('%')) {
+                setting.value += 'px'
+            }
+    
+            const numericValue = parseFloat(setting.value)
+            if (isNaN(numericValue) || numericValue <= 0) {
+                setting.value = '700px'
+            }
+    
+            // Generar el CSS correspondiente
+            styleContent += `
+                ${setting.scopeClass} {
+                    ${setting.propertyToChange}: ${setting.value} !important;
+                }
+            `
+        })
+    
         const style = document.createElement('style')
         style.id = 'custom-styles'
-        style.textContent = `
-            ${settings.commentsBlockWidth.scopeClass} {
-                box-sizing: border-box !important;
-                width: ${settings.commentsBlockWidth.value} !important;
-            }
-        `
+        style.textContent = styleContent
         document.head.appendChild(style)
     }
+    
     // Aplicar estilos personalizados al cargar la página
     applyCustomStyles()
     // Mostrar un aviso visual al aplicar los estilos
@@ -163,7 +171,7 @@
             width: fit-content !important;
         }
 
-          ${settings.commentsBlockWidth.scopeClass} {
+        ${settings.commentsBlockWidth.scopeClass} {
             box-sizing: border-box !important;
             width: ${settings.commentsBlockWidth.value} !important;
         }
