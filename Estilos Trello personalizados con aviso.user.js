@@ -115,7 +115,7 @@
         const existingStyle = document.getElementById('custom-styles')
         if (existingStyle) {
             existingStyle.remove()
-        } 
+        }
 
         // Validar el ancho del bloque de comentarios
         if (!settings.commentsBlockWidth.value || isNaN(parseFloat(settings.commentsBlockWidth.value))) {
@@ -198,5 +198,5 @@
     banner.id = 'tampermonkey-banner'
     banner.textContent = '✅ Estilos personalizados aplicados'
     document.body.appendChild(banner)
-    
+
 })()
