@@ -19,7 +19,7 @@
             name: 'Ancho del bloque de comentarios',
             propertyToChange: 'width',
             value: '',
-            scopeClass: '.q5xxNU7ASO2fsR, .q5xxNU7ASO2fsR .N4ktAjtOpkJvy0'
+            scopeClass: '.w7hbB5D5vQdlht, .w7hbB5D5vQdlht .E59SuLLYHMwjAT'
         }
     }
 
@@ -159,8 +159,8 @@
 
     const style = document.createElement('style')
     style.textContent = `
-        ._UvaHK6fukmTc4.sfCjcMKVjES0Hl.t_6PqKcL7DA8Qa {
-            width: fit-content !important;
+        .BvYMUSHQ3VZhSV.n2JiYx2TrpRj9Z.udR7hhdNKnONkc {
+            width: fit-content;
         }
 
         ${settings.commentsBlockWidth.scopeClass} {
