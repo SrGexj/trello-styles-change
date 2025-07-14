@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Estilos Trello personalizados con aviso
 // @namespace    http://tampermonkey.net/
-// @version      0.4.1
+// @version      0.4.3
 // @description  Cambia estilos en Trello y muestra un aviso visual en pantalla al aplicar los cambios CSS personalizados.
 // @author       Autor
 // @match        *://*.trello.com/*
@@ -26,7 +26,7 @@
                 )
             },
             // Opción 2: fallback si getTargets falla
-            scopeClass: '.w7hbB5D5vQdlht, .w7hbB5D5vQdlht .E59SuLLYHMwjAT'
+            scopeClass: 'div[aria-labelledby="card-back-name"] aside, div[aria-labelledby="card-back-name"] aside div[data-testid="card-back-panel"]'
         }
     }    
 
@@ -155,7 +155,7 @@
 
     const style = document.createElement('style')
     style.textContent = `
-        .BvYMUSHQ3VZhSV.n2JiYx2TrpRj9Z.udR7hhdNKnONkc {
+        div[aria-labelledby="card-back-name"] {
             width: fit-content !important;
         }
 
