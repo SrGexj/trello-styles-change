@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Estilos Trello personalizados con aviso
 // @namespace    http://tampermonkey.net/
-// @version      0.4.0
+// @version      0.4.1
 // @description  Cambia estilos en Trello y muestra un aviso visual en pantalla al aplicar los cambios CSS personalizados.
 // @author       Autor
 // @match        *://*.trello.com/*
@@ -160,7 +160,7 @@
     const style = document.createElement('style')
     style.textContent = `
         .BvYMUSHQ3VZhSV.n2JiYx2TrpRj9Z.udR7hhdNKnONkc {
-            width: fit-content;
+            width: fit-content !important;
         }
 
         ${settings.commentsBlockWidth.scopeClass} {
