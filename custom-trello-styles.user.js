@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Estilos Trello personalizados con aviso
 // @namespace    http://tampermonkey.net/
-// @version      0.4.5
+// @version      0.4.6
 // @description  Cambia estilos en Trello y muestra un aviso visual en pantalla al aplicar los cambios CSS personalizados.
 // @author       Autor
 // @match        *://*.trello.com/*
@@ -183,10 +183,10 @@
         }
 
         @keyframes fadeInOut {
-            0% { opacity: 0; transform: translate(-50%, 0)}
-            10% { opacity: 1; transform: translate(-50%, 0)}
-            90% { opacity: 1; transform: translate(-50%, 0)}
-            100% { opacity: 0; transform: translate(-50%, 0)}
+            0% { opacity: 0; transform: translate(-50%, -20px)}
+            10% { opacity: 1; transform: translate(-50%, -19px)}
+            90% { opacity: 1; transform: translate(-50%, -1px)}
+            100% { opacity: 0; transform: translate(-50%, 0px)}
         }
     `
     document.head.appendChild(style)
