@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         Estilos Trello personalizados con aviso
 // @namespace    http://tampermonkey.net/
-// @version      0.4.3
+// @version      0.4.4
 // @description  Cambia estilos en Trello y muestra un aviso visual en pantalla al aplicar los cambios CSS personalizados.
 // @author       Autor
 // @match        *://*.trello.com/*
@@ -168,7 +168,8 @@
             position: fixed;
             pointer-events:none;
             top: 16px;
-            right: 16px;
+            left: 50%;
+            transform: translateX(-50%);
             background-color: #0079bf;
             color: white;
             padding: 12px 16px;
