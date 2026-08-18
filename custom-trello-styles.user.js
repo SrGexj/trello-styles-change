@@ -26,7 +26,7 @@
                 )
             },
             // Opción 2: fallback si getTargets falla
-            scopeClass: 'div[aria-labelledby="card-back-name"] aside, div[aria-labelledby="card-back-name"] aside div[data-testid="card-back-panel"]'
+            scopeClass: 'div[aria-labelledby="card-back-name"] aside'
         }
     }    
 
